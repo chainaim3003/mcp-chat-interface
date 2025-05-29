@@ -1,0 +1,56 @@
+{
+  "mcpServers": {
+    "pret-compliance": {
+      "command": "node",
+      "args": [
+        "node_modules/@pret/mcp-server/dist/index.js"
+      ],
+      "env": {
+        "GLEIF_API_KEY": "${GLEIF_API_KEY}",
+        "COMPOSITE_API_KEY": "${COMPOSITE_API_KEY}",
+        "DEBUG": "pret:*"
+      }
+    },
+    "goat-xdc": {
+      "command": "node", 
+      "args": [
+        "node_modules/@goat-sdk/mcp-xdc/dist/index.js"
+      ],
+      "env": {
+        "WALLET_PRIVATE_KEY": "${WALLET_PRIVATE_KEY}",
+        "XDC_RPC_URL": "${XDC_RPC_URL}",
+        "NETWORK": "${XDC_NETWORK}",
+        "DEBUG": "goat:*"
+      }
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "./data",
+        "./uploads",
+        "./workflows"
+      ]
+    },
+    "memory": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-memory"
+      ]
+    },
+    "brave-search": {
+      "command": "npx",
+      "args": [
+        "-y", 
+        "@modelcontextprotocol/server-brave-search"
+      ],
+      "env": {
+        "BRAVE_API_KEY": "${BRAVE_API_KEY}"
+      },
+      "disabled": true
+    }
+  },
+  "globalShortcut": "Ctrl+Space"
+}

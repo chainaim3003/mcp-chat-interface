@@ -1,1 +1,17 @@
 node_modules
+
+# MCP Configuration
+.env.local
+*.backup-*
+logs/
+*.log
+claude_mcp_config.json.backup
+
+# Backup files
+*.backup
+*.backup.*
+**/*.backup/**
+**/backup/**
+*.bak
+*.old
+mcp-orchestrator.backup/

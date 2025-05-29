@@ -1,0 +1,56 @@
+{
+  "mcpServers":{
+     "CA-MCP-SERVER":{
+      "command":"node",
+      "args":["C:\\SATHYA\\AI-MCP-NANDA-chainaim3003\\mcp\\risk-simulation\\build\\index.js"]
+    },   
+    "Goat-EVM-MCP-Server": {
+            "command": "node",
+            "args": ["C:\\SATHYA\\ELIZA-XDC\\CHAINAIM3003\\goat\\typescript\\examples\\by-framework\\model-context-protocol\\build\\server\\xdcmcpserveradv.js"],
+            "env": {
+                "WALLET_PRIVATE_KEY": "0x64aa93e0e0bfec460d474e6b03054a12c103211e5e9d8e11bec984dc8a2d8cb2",
+                "RPC_PROVIDER_URL": "https://rpc.apothem.network"
+            }
+    }, 
+     "PRET-MCP-SERVER-internal":{
+        "command": "node",
+        "args":[
+          "C:\\SATHYA\\ZK\\ZK-PRET-CHAINAIMLABS\\ZK-PRET-TEST-V3\\build\\pretmcpserver\\index.js"
+        ]
+       }, 
+    "weatherpy2": {
+      "command":"npx","args":["-y","@h1deya/mcp-server-weather"]
+    },
+    "sqlite": {
+      "command": "docker",
+      "args": [
+        "run",
+        "--rm",
+        "-i",
+        "-v",
+        "mcp-test:/mcp",
+        "mcp/sqlite",
+        "--db-path",
+        "/mcp/test.db"
+      ]
+    },
+    "BLOCKCHAIN-MCP-SERVER":{
+      "command":"node",
+      "args":["C:\\SATHYA\\AI-MCP-NANDA-Chainaim3003\\mcp\\blockchain\\build\\index.js"]
+    },
+    "OCR-MCP-SERVER":{
+      "command":"node",
+      "args":["C:\\SATHYA\\AI-MCP-NANDA-Chainaim3003\\mcp\\ocr\\build\\index.js"]
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "./data",
+        "./uploads",
+        "./workflows"
+      ]
+    }
+  }
+}
